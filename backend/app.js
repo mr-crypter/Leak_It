@@ -48,15 +48,6 @@ const allowedOrigins = [config.get("origin"), "http://localhost:3000"];
 
 // 3.Cors
 app.use(cors({ origin: allowedOrigins, credentials: true }));
-// Use CORS middleware
-app.use(cors({
-    origin: 'https://leak-it.vercel.app', // Replace with your frontend URL
-    methods: 'GET,POST,PUT,DELETE', // Add other methods as needed
-    credentials: true // If you need to send cookies with the request
-}));
-
-// Your other routes and middleware
-
 
 //4. logger
 console.log(config.get("deployStage"));
