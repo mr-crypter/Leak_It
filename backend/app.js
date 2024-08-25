@@ -41,22 +41,10 @@ app.use(express.json({ limit: "10kb" }));
 // 2. Cookie parser
 app.use(cookieParser());
 
-// const allowedOrigins = [config.get("origin"), "https://leak-it.vercel.app/"];
-// // Uncomment this using development
-// allowedOrigins.concat("https://leak-it.vercel.app/");
-const allowedOrigins = ["https://leak-it.vercel.app", "http://localhost:3000"];
+const allowedOrigins = [config.get("origin"), "http://localhost:3000"];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true // Allow credentials (cookies, sessions, etc.)
-}));
-
+// Uncomment this using development
+// allowedOrigins.concat("http://localhost:3000");
 
 // 3.Cors
 app.use(cors({ origin: allowedOrigins, credentials: true }));
