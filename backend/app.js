@@ -41,7 +41,7 @@ app.use(express.json({ limit: "10kb" }));
 // 2. Cookie parser
 app.use(cookieParser());
 
-const allowedOrigins = [config.get("origin"), "https://leak-hcdr8onuy-mrcrypters-projects.vercel.app/"];
+const allowedOrigins = [config.get("origin"), "https://leak-it.vercel.app/"];
 
 // Uncomment this using development
 // allowedOrigins.concat("http://localhost:3000");
