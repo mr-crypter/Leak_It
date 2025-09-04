@@ -44,7 +44,7 @@ app.use(cookieParser());
 const allowedOrigins = [config.get("origin"), "http://localhost:3000"];
 
 // Uncomment this using development
-// allowedOrigins.concat("http://localhost:3000");
+allowedOrigins.concat("https://leak-it.vercel.app");
 
 // 3.Cors
 app.use(cors({ origin: allowedOrigins, credentials: true }));
